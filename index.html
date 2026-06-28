@@ -12,12 +12,28 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            overflow: hidden;
         }
+        
         img {
             max-width: 90%;
             max-height: 90vh;
             border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            /* Applies the animation below: 4 seconds long, smooth, and loops forever */
+            animation: breatheGlow 4s ease-in-out infinite;
+        }
+
+        /* This handles the pulsing glow effect */
+        @keyframes breatheGlow {
+            0% { 
+                box-shadow: 0 4px 20px rgba(255, 255, 255, 0.08); 
+            }
+            50% { 
+                box-shadow: 0 4px 40px rgba(255, 255, 255, 0.25); 
+            }
+            100% { 
+                box-shadow: 0 4px 20px rgba(255, 255, 255, 0.08); 
+            }
         }
     </style>
 </head>
