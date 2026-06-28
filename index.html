@@ -8,49 +8,65 @@
         body {
             background-color: #121212;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
             overflow: hidden;
+            position: relative; /* Allows positioning things relative to the whole screen */
         }
         
-        .container {
+        /* Positions the counter perfectly in the top right corner */
+        .counter-box {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #1a1a1a;
+            padding: 6px 12px;
+            border-radius: 20px; /* Makes it a clean pill shape */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
             display: flex;
-            flex-direction: column;
             align-items: center;
-            gap: 20px; /* Puts a clean space between the image and the counter */
+            gap: 8px; /* Gap between the eye icon and the number counter */
+            border: 1px solid #2a2a2a;
+        }
+
+        /* The custom SVG Eye Icon */
+        .eye-icon {
+            width: 16px;
+            height: 16px;
+            fill: #888888; /* Subtle grey color for the eye */
+        }
+
+        /* The visual counter image styles */
+        .counter-img {
+            height: 16px;
+            display: block;
         }
 
         img.main-pic {
             max-width: 90%;
-            max-height: 80vh;
+            max-height: 85vh;
             border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.5); /* Plain clean shadow, no glow */
-        }
-
-        .counter-box {
-            background: #1a1a1a;
-            padding: 8px 15px;
-            border-radius: 6px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-            display: flex;
-            align-items: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- The Image -->
-        <img class="main-pic" src="image_34d47f.jpg" alt="Wife Reveal">
-
-        <!-- Visitor Counter -->
-        <div class="counter-box">
-            <img src="https://hitwebcounter.com/counter/counter.php?page=10182747&style=0005&nbdigits=5&type=page&initCount=0" title="Free Counter" Alt="web counter" border="0" />
-        </div>
+    <!-- Top Right View Counter Box -->
+    <div class="counter-box">
+        <!-- SVG Code for a clean, sharp Eye icon -->
+        <svg class="eye-icon" viewBox="0 0 24 24">
+            <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        
+        <!-- Live Counting Badge -->
+        <img class="counter-img" src="https://count.getloli.com/get/@chudoslav_wife_reveal?theme=rule34" alt="views">
     </div>
+
+    <!-- Centered Image -->
+    <img class="main-pic" src="image_34d47f.jpg" alt="Wife Reveal">
 
 </body>
 </html>
